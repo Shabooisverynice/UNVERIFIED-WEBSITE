@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Remigio National High School</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('kuay.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        h1 {
+            font-weight: 600;
+            margin-bottom: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.6;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .gallery img {
+            width: 180px;
+            height: auto;
+            margin: 10px;
+            border-radius: 15px;
+            border: 4px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Lightbox effect */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="SRNHS Logo" class="logo">
+        <h1>San Remigio National High School</h1>
+        <img src="logo.png" alt="SRNHS Logo" class="logo">
+    </header>
+    
+    <section>
+        <p>
+            Welcome to San Remigio National High School (SRNHS), where excellence and character building go hand in hand. Our school is located in the heart of the community, offering students a safe and stimulating environment to learn and grow.
+        </p>
+        <p>
+            At SRNHS, we believe in the holistic development of our students, ensuring they are not only prepared academically but also encouraged to develop socially and emotionally. Our dedicated teachers work tirelessly to create an inclusive and engaging learning environment where every student can succeed.
+        </p>
+        <p>
+            Our curriculum is designed to cater to diverse student needs, combining traditional academic subjects with vocational and technical training to prepare our students for both higher education and immediate employment. We aim to foster creativity, critical thinking, and leadership in our students to shape them into responsible and innovative citizens.
+        </p>
+    </section>
+	
+	<section>
+        <h2 style="text-align:center; background-color: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 10px;">Watch Our School Video</h2>
+        <div style="display:flex; justify-content:center; margin: 20px;">
+            <video width="640" height="360" controls>
+                <source src="shut.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+	</section>
+
+    <section class="gallery">
+        <img src="red.png" alt="School Image 1">
+        <img src="blue.png" alt="School Image 2">
+        <img src="green.png" alt="School Image 3">
+        <img src="yellow.png" alt="School yellow">
+        <img src="redag.png" alt="School red again">
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" src="">
+    </div>
+
+    <script>
+        const galleryImages = document.querySelectorAll('.gallery img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        galleryImages.forEach(image => {
+            image.addEventListener('click', () => {
+                lightboxImg.src = image.src;
+                lightbox.style.display = 'flex';
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
